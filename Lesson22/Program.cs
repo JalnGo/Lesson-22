@@ -7,11 +7,22 @@ namespace LoopsMethodsExceptionsArraysClasses
         // Add a static method named MultiplytTwoNumbers that takes two int
         // parameters named x and y, and returns the int result that is the
         // product of the two parameters.
-
+            
+            
+            static public int MultiplyTwoNumbers(int x, int y)
+            {
+                return ( x * y);
+            }
+        
 
         // Add an instance method named AddTwoNumbers that takes two int
         // parameters named x and y, and returns the int result that is
         // the sum of the two parameters.
+
+            public int AddTwoNumbers(int x, int y)
+             {
+            return x + y;
+             }
 
 
         // Add a static method named DoubleIt that returns void, and it
@@ -19,6 +30,10 @@ namespace LoopsMethodsExceptionsArraysClasses
         // as an out parameter. The outgoing value of the parameter is double
         // the input value of the parameter.
 
+        static public int DoubleIt(int h)
+            {
+            return h * 2;
+             }
 
         // Add an instance method named LoopOverParams that returns void, and
         // takes a single parameter that is an array of int type elements
@@ -26,18 +41,28 @@ namespace LoopsMethodsExceptionsArraysClasses
         // foreach loop to iterate over the collection of values it receives
         // and it displays the list of elements in the parameter.
 
+ 
 
-        // Add a static method named DivideIntegers that takes two int
-        // parameters named dividend and divisor. It returns the result
-        // of dividing the dividend parameter by the divisor parameter.
+    // Add a static method named DivideIntegers that takes two int
+    // parameters named dividend and divisor. It returns the result
+    // of dividing the dividend parameter by the divisor parameter.
+
+        static public int DivideIntegers(int divided, int divisor)
+        {
+            return divided / divisor;
+        }
 
 
-        static void Main(string[] args)
+
+    static void Main(string[] args)
         {
             // Call the static method named MultiplytTwoNumbers
             // passing in the two int values of 3 and 4. Then
             // assign the result to a local variable named product and
             // display the resulting value of product in console output.
+
+            var result = Program.MultiplyTwoNumbers(3, 4);
+            Console.WriteLine(result);
 
 
             // Create an instance of the Program class named program.
@@ -46,13 +71,22 @@ namespace LoopsMethodsExceptionsArraysClasses
             // the result to a local variable named sum and
             // display the value of sum in console output
 
+            int x = 3;
+            int y = 4;
+            int sum = x + y;
+            Program answer = new Program();
+            int equal = answer.AddTwoNumbers(3,4);
+            Console.WriteLine(equal);
+
 
             // Declare an int variable named x and initialize it
             // with the literal value of 42. Call the static method
             // named DoubleIt passing in the x variable as the
             // parameter. Then display the resulting value of x in
             // console output.
-
+            int h = 42;
+            var submit = Program.DoubleIt(x);
+            Console.WriteLine(submit);
 
             // Call the LoopOverParams instance method, passing in
             // three parameters with the values of 1, 2, and 3.
@@ -76,6 +110,10 @@ namespace LoopsMethodsExceptionsArraysClasses
             // commas, and row elements seperated with carriage returns.
 
 
+
+
+
+            Console.ReadLine();
         }
     }
 }
