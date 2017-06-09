@@ -4,12 +4,14 @@ namespace LoopsMethodsExceptionsArraysClasses
 {
     class Program
     {
+        private static object over;
+
         // Add a static method named MultiplytTwoNumbers that takes two int
         // parameters named x and y, and returns the int result that is the
         // product of the two parameters.
-            
-            
-            static public int MultiplyTwoNumbers(int x, int y)
+
+
+        static public int MultiplyTwoNumbers(int x, int y)
             {
                 return ( x * y);
             }
@@ -40,6 +42,14 @@ namespace LoopsMethodsExceptionsArraysClasses
         // declared using the params keyword. The LoopOverParams method uses a
         // foreach loop to iterate over the collection of values it receives
         // and it displays the list of elements in the parameter.
+
+            public void LoopOverParams(params int[] x)
+        {
+            foreach (var item in x)
+            {
+                Console.WriteLine(x);
+            }
+        }
 
  
 
@@ -78,20 +88,28 @@ namespace LoopsMethodsExceptionsArraysClasses
             int equal = answer.AddTwoNumbers(3,4);
             Console.WriteLine(equal);
 
-
+    
             // Declare an int variable named x and initialize it
             // with the literal value of 42. Call the static method
             // named DoubleIt passing in the x variable as the
             // parameter. Then display the resulting value of x in
             // console output.
-            int h = 42;
-            var submit = Program.DoubleIt(x);
-            Console.WriteLine(submit);
 
+            int h = 42;
+            DoubleIt(h);
+            Console.WriteLine(h);
+
+    
+   
             // Call the LoopOverParams instance method, passing in
             // three parameters with the values of 1, 2, and 3.
 
+            Program loop = new Program();
+            loop.LoopOverParams(1, 2, 3);
 
+
+    
+    
             // Call the method named DivideIntegers with the first
             // parameter set to 1, and second parameter set to 0.
             // Assign the result to an int variable named quotient.
@@ -100,7 +118,16 @@ namespace LoopsMethodsExceptionsArraysClasses
             // exception handler, display the exception message
             // in the console output.
 
-
+            try
+            {
+                var quotient = DivideIntegers(1, 0);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Attempted to divide by zero.");
+            }
+     
+     
             // Declare a two-dimensional array named multiplicationTable
             // that contains 4 elements by 4 elements. Initialize it in
             // a nested loop to contain elements that equal to the value
@@ -109,10 +136,27 @@ namespace LoopsMethodsExceptionsArraysClasses
             // in the console output, with column elements seperated with
             // commas, and row elements seperated with carriage returns.
 
+            
+                int[,] multiplicationTable = new int[4, 4];
+                for (int i = 0; i < 4; i++)
+                {
+                    for (int j = 0; j < 4; j++)
+                    {
+                        multiplicationTable[i, j] = i * j;
+                    }          
+                }   
+            
+                for (int i = 0; i < 4; i++)
+                {
+                    for (int j = 0; j < 4; j++)
+                    {
+                        Console.Write(multiplicationTable[i, j] + ", ");
+                    }
+                Console.WriteLine("\n");
+            }
 
 
-
-
+            Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
         }
     }
